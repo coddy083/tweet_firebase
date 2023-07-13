@@ -33,41 +33,62 @@ export default function Tweet({ tweetObj, isOwner }) {
   };
 
   return (
-    <div>
+    <>
       {!editing && (
         <>
-          {tweetObj.attachmentUrl && (
-            <img
-              src={tweetObj.attachmentUrl}
-              width="100px"
-              height="100px"
-              alt={tweetObj.tweet}
-            />
-          )}
-          <p>{tweetObj.tweet}</p>
+          <div className="flex flex-col border-b-2 py-1 my-3">
+            {isOwner && !editing && (
+              <div className="flex justify-end my-1">
+                <button
+                  className="w-fit bg-black text-white mr-1 p-1"
+                  onClick={onDeleteClick}
+                >
+                  삭제
+                </button>
+                <button
+                  className="w-fit bg-black text-white mr-1 p-1"
+                  onClick={onEditClick}
+                >
+                  수정
+                </button>
+              </div>
+            )}
+            {tweetObj.attachmentUrl && (
+              <img
+                className="h-auto"
+                src={tweetObj.attachmentUrl}
+                alt={tweetObj.tweet}
+              />
+            )}
+            <p className="mt-2 text-lg">{tweetObj.tweet}</p>
+          </div>
         </>
       )}
       {editing && (
         <>
-          <form onSubmit={onSubmit}>
+          <form onSubmit={onSubmit} className="flex">
             <input
+              className="p-1 my-1 mr-2 bg-white text-black border flex-1"
               type="text"
               placeholder="수정할 내용을 입력하세요."
               value={newTweet}
               required
               onChange={(e) => setNewTweet(e.target.value)}
             />
-            <input type="submit" value="완료" />
-            <button onClick={onEditClick}>취소</button>
+            <input
+              className="mx-1 bg-black text-white p-1"
+              type="submit"
+              value="완료"
+            />
+            <button
+              className="mx-1 bg-black text-white p-1"
+              onClick={onEditClick}
+            >
+              취소
+            </button>
           </form>
         </>
       )}
-      {isOwner && !editing && (
-        <>
-          <button onClick={onDeleteClick}>삭제</button>
-          <button onClick={onEditClick}>수정</button>
-        </>
-      )}
-    </div>
+    </>
   );
 }
