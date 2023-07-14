@@ -65,10 +65,10 @@ export default function Tweet({ tweetObj, isOwner }) {
         </>
       )}
       {editing && (
-        <>
+        <div>
           <form onSubmit={onSubmit} className="flex">
             <input
-              className="p-1 my-1 mr-2 bg-white text-black border flex-1"
+              className="p-2 my-1 mr-2 bg-white text-black border flex-1"
               type="text"
               placeholder="수정할 내용을 입력하세요."
               value={newTweet}
@@ -87,7 +87,7 @@ export default function Tweet({ tweetObj, isOwner }) {
               취소
             </button>
           </form>
-        </>
+        </div>
       )}
     </>
   );

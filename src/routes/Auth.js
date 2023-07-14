@@ -3,7 +3,7 @@ import { socialLogin } from "firebase_init";
 import { LoginInput } from "components/LoginInput";
 
 export default function Auth() {
-  const [newAccount, setNewAccount] = useState(true); // true: 회원가입, false: 로그인
+  const [newAccount, setNewAccount] = useState(false); // true: 회원가입, false: 로그인
   const [errorMassage, setErrorMassage] = useState("");
 
   const toggleAccount = () => setNewAccount((prev) => !prev);
@@ -42,13 +42,15 @@ export default function Auth() {
   };
 
   return (
-    <div className="flex flex-col items-center my-0 mx-auto w-96 py-10">
-      <LoginInput newAccount={newAccount} setErrorMassage={setErrorMassage} />
-      <Button />
-      <div>{errorMassage}</div>
-      <div className="flex flex-col mt-6 w-full">
-        <SocialLoginButton name="google" title="구글 로그인" />
-        <SocialLoginButton name="github" title="GITHUB 로그인" />
+    <div className="h-screen flex flex-col justify-center items-center">
+      <div className="flex flex-col items-center my-0 mx-auto w-96">
+        <LoginInput newAccount={newAccount} setErrorMassage={setErrorMassage} />
+        <Button />
+        <div>{errorMassage}</div>
+        <div className="flex flex-col mt-6 w-full">
+          <SocialLoginButton name="google" title="구글 로그인" />
+          <SocialLoginButton name="github" title="GITHUB 로그인" />
+        </div>
       </div>
     </div>
   );

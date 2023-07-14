@@ -42,11 +42,11 @@ export const TweetInput = ({ userObj }) => {
   };
 
   return (
-    <form className="mb-16 border p-3 mt-6" onSubmit={onSubmit}>
+    <form className="mb-16 border p-1 mt-3" onSubmit={onSubmit}>
       <div className="flex flex-col">
         <div className="flex">
           <input
-            className="p-3 my-3 bg-white text-black outline-none flex-1"
+            className="p-2 my-2 bg-white text-black outline-none flex-1"
             type="text"
             placeholder="트윗을 입력하세요."
             value={tweet}
@@ -70,7 +70,7 @@ export const TweetInput = ({ userObj }) => {
       {attachment && (
         <div className="flex flex-col">
           <img
-            className="h-auto"
+            className="h-auto w-52 my-3 rounded-lg"
             src={attachment}
             width="120px"
             height="120px"
