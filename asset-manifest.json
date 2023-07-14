@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/new_twitter/tweet_firebase/static/css/main.b804f86b.css",
-    "main.js": "/new_twitter/tweet_firebase/static/js/main.38ea8346.js",
-    "index.html": "/new_twitter/tweet_firebase/index.html",
-    "main.b804f86b.css.map": "/new_twitter/tweet_firebase/static/css/main.b804f86b.css.map",
-    "main.38ea8346.js.map": "/new_twitter/tweet_firebase/static/js/main.38ea8346.js.map"
+    "main.css": "/tweet_firebase/static/css/main.b804f86b.css",
+    "main.js": "/tweet_firebase/static/js/main.11857a5b.js",
+    "index.html": "/tweet_firebase/index.html",
+    "main.b804f86b.css.map": "/tweet_firebase/static/css/main.b804f86b.css.map",
+    "main.11857a5b.js.map": "/tweet_firebase/static/js/main.11857a5b.js.map"
   },
   "entrypoints": [
     "static/css/main.b804f86b.css",
-    "static/js/main.38ea8346.js"
+    "static/js/main.11857a5b.js"
   ]
 }
